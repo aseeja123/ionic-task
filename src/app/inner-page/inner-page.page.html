@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Task Cards</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card class="card">
+          <ion-title>Card 1</ion-title>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card class="card">
+        <ion-title>Card 2</ion-title>
+      </ion-card>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card class="card-big">
+        <ion-title>Card 3</ion-title>
+      </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card class="card">
+          <ion-title>Card 4</ion-title>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card class="card">
+          <ion-title>Card 5</ion-title>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card class="card-big">
+          <ion-title>
+            Card 6
+          </ion-title>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row>
+      <ion-card>
+        <ion-title *ngIf="newTask">{{task}}</ion-title>
+      </ion-card>
+    </ion-row>
+  
+  </ion-grid>
+  <ion-button class="button" (click)="addItem(newTask)">Add Task +</ion-button>
+  <div *ngIf="addTask">
+  <ion-input [(ngModel)]="newTask"></ion-input>
+  <ion-button (click)="onSubmit()">Submit Task</ion-button>
+</div>
+</ion-content>
